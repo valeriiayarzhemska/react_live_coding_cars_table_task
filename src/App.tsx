@@ -89,13 +89,14 @@ export const App: React.FC = () => {
               rentPrice,
               color,
             } = car;
-            const { name } = color;
 
             return (
               <tr>
                 <td>{id}</td>
                 <td>{brand}</td>
-                <td style={{ color: name }}>{name}</td>
+                {color && (
+                  <td style={{ color: color.name }}>{color.name}</td>
+                )}
                 <td>{rentPrice}</td>
               </tr>
             );
